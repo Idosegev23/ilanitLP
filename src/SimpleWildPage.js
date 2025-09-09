@@ -562,7 +562,7 @@ const SimpleWildPage = () => {
             >
               <div className="text-right mb-6">
                 <h2 className="text-3xl md:text-5xl font-black text-luxe-primary">
-                  מי זאת אילנית?
+                  איך הגעתי לשם?
                 </h2>
               </div>
               
