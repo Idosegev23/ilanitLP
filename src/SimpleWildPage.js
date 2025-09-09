@@ -413,7 +413,7 @@ const SimpleWildPage = () => {
           text="למידה אמיתית" 
           x={65} 
           y={12} 
-          size="text-2xl md:text-5xl" 
+          size="text-lg sm:text-2xl md:text-5xl" 
           weight="font-black"
           color="text-luxe-primary"
           rotation={-1}
@@ -424,7 +424,7 @@ const SimpleWildPage = () => {
           text="מתרחשת" 
           x={25} 
           y={12} 
-          size="text-2xl md:text-5xl" 
+          size="text-lg sm:text-2xl md:text-5xl" 
           weight="font-black"
           color="text-luxe-accent"
           rotation={1}
@@ -436,7 +436,7 @@ const SimpleWildPage = () => {
           text="כשיש חופש" 
           x={60} 
           y={20} 
-          size="text-xl md:text-4xl" 
+          size="text-base sm:text-xl md:text-4xl" 
           weight="font-bold"
           color="text-luxe-secondary"
           rotation={2}
@@ -447,7 +447,7 @@ const SimpleWildPage = () => {
           text="לגלות" 
           x={20} 
           y={20} 
-          size="text-xl md:text-4xl" 
+          size="text-base sm:text-xl md:text-4xl" 
           weight="font-bold"
           color="text-luxe-primary"
           rotation={-2}
@@ -459,7 +459,7 @@ const SimpleWildPage = () => {
           text="ותחושת ביטחון" 
           x={55} 
           y={28} 
-          size="text-lg md:text-3xl" 
+          size="text-sm sm:text-lg md:text-3xl" 
           weight="font-semibold"
           color="text-luxe-secondary"
           rotation={1}
@@ -470,7 +470,7 @@ const SimpleWildPage = () => {
           text="לנסות" 
           x={15} 
           y={28} 
-          size="text-3xl md:text-6xl" 
+          size="text-xl sm:text-3xl md:text-6xl" 
           weight="font-black"
           color="text-luxe-accent"
           rotation={-1}
@@ -482,7 +482,7 @@ const SimpleWildPage = () => {
           text={content.hero.subtitle} 
           x={10} 
           y={38} 
-          size="text-base md:text-2xl" 
+          size="text-sm sm:text-base md:text-2xl" 
           weight="font-bold"
           color="text-luxe-primary"
           rotation={0}
@@ -555,7 +555,7 @@ const SimpleWildPage = () => {
                 
                 <div className="flex flex-nowrap gap-2 mt-6 justify-start">
                   <div className="bg-luxe-soft/20 px-3 py-1 rounded-full">
-                    <span className="text-luxe-primary font-semibold text-sm">מורה מוסמכת</span>
+                    <span className="text-luxe-primary font-semibold text-sm">מאמנת לימודית</span>
                   </div>
                   <div className="bg-luxe-accent/20 px-3 py-1 rounded-full">
                     <span className="text-luxe-primary font-semibold text-sm">הוראה מתקנת</span>
