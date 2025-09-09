@@ -23,7 +23,6 @@ import {
   User,
   Baby,
   Send,
-  ArrowLeft,
   Briefcase,
   BookHeart,
   Sparkles
