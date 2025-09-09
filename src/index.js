@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import LandingPageProfessional from './LandingPageProfessional';
+import App from './App';
+
+console.log('🎯 index.js נטען - מייבא App!!!');
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <LandingPageProfessional />
+    <App />
   </React.StrictMode>
 );
