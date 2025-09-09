@@ -7,21 +7,35 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // ערכת צבעים מותאמת לפי הדרישות
-        cream: '#FAF7F2', // רקע כללי - שמנת/נייר
+        // ערכת צבעים Luxe - יוקרתית ומתוחכמת
+        luxe: {
+          // צבע עיקרי כהה וחם
+          primary: '#2A3934', // luxe-1 - ירוק כהה מתוחכם
+          // צבע אקסנט חם ומזמין
+          accent: '#D67D65', // luxe-2 - אדום חם ונעים
+          // צבע משני עמוק
+          secondary: '#2E4B46', // luxe-3 - ירוק עמוק יותר
+          // צבע עדין ורך
+          soft: '#ECAA92', // luxe-4 - ורוד-אפרסק עדין
+          // צבע רקע כהה ועשיר
+          background: '#263946', // luxe-5 - כחול-אפור כהה
+        },
+        // שמירה על תאימות לאחור - עדכון למיפוי החדש
+        cream: '#F5F5F5', // רקע בהיר
         ink: {
-          DEFAULT: '#1E293B', // טקסט ראשי
-          heading: '#193752', // כותרות/אלמנט מוביל
-          light: '#64748B', // טקסט משני
+          DEFAULT: '#2A3934', // luxe-primary
+          heading: '#2A3934', // luxe-primary
+          light: '#2E4B46', // luxe-secondary
         },
         accent: {
-          DEFAULT: '#F5A219', // CTA צבע ראשי
-          dark: '#F27612', // CTA צבע כהה לגרדיאנט
+          DEFAULT: '#D67D65', // luxe-accent
+          dark: '#ECAA92', // luxe-soft
         },
-        highlight: '#FEF3C7', // רקע להדגשות טקסט
+        highlight: '#ECAA92', // luxe-soft
       },
       fontFamily: {
-        'heebo': ['Heebo', 'sans-serif']
+        'playpen': ['Playpen Sans Hebrew', 'Playpen Sans', 'sans-serif'],
+        'sans': ['Playpen Sans Hebrew', 'Playpen Sans', 'system-ui', 'sans-serif']
       },
       fontSize: {
         // טיפוגרפיה מותאמת למובייל ונגישות

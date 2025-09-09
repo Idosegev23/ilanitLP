@@ -13,12 +13,12 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Heebo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Playpen Sans Hebrew', 'Playpen Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   direction: rtl;
-  background-color: #FAF7F2; /* רקע שמנת/נייר */
-  color: #1E293B; /* טקסט ראשי */
+  background-color: #F5F5F5; /* רקע בהיר ונקי */
+  color: #2A3934; /* טקסט ראשי - Luxe Primary */
   line-height: 1.8;
 }
 
@@ -28,18 +28,119 @@ body {
 }
 
 *:focus-visible {
-  outline: 3px solid #F5A219;
+  outline: 3px solid #D67D65;
   outline-offset: 2px;
   border-radius: 4px;
 }
 
 /* הדגשות טיפוגרפיות */
 .highlight {
-  background: linear-gradient(120deg, #FEF3C7 0%, #FEF3C7 100%);
+  background: linear-gradient(120deg, #ECAA92 0%, #ECAA92 100%);
   background-repeat: no-repeat;
   background-size: 100% 40%;
   background-position: 0 75%;
   padding: 0 2px;
+}
+
+/* אנימציות יצירתיות */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 4s ease infinite;
+}
+
+.bg-300\% {
+  background-size: 300% 300%;
+}
+
+/* אפקטים מתקדמים */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* אנימציות מתקדמות נוספות */
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 2s ease-in-out infinite;
+}
+
+/* עיצובים לא רגילים */
+.creative-border {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: morph 8s ease-in-out infinite;
+}
+
+@keyframes morph {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+/* אפקטי רקע דינמיים */
+.dynamic-bg {
+  background: linear-gradient(-45deg, #2A3934, #D67D65, #2E4B46, #ECAA92);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* אנימציות מותאמות לprefers-reduced-motion */

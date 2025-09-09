@@ -85,7 +85,7 @@ const LandingPageProfessional = () => {
     parentName: '',
     parentPhone: '',
     childName: '',
-    childAge: '',
+    subjectInterest: '',
     childGrade: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -159,7 +159,7 @@ const LandingPageProfessional = () => {
       if (response.ok) {
         toast.success('הפרטים נשלחו בהצלחה! אילנית תיצור איתכם קשר בקרוב.');
         setFormData({
-          parentName: '', parentPhone: '', childName: '', childAge: '', childGrade: ''
+          parentName: '', parentPhone: '', childName: '', subjectInterest: '', childGrade: ''
         });
         setTimeout(() => setShowSignupModal(false), 2000);
       } else {
@@ -173,7 +173,7 @@ const LandingPageProfessional = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cream font-heebo text-ink">
+    <div className="min-h-screen bg-gradient-to-br from-cream via-white to-luxe-soft/10 font-playpen text-ink relative overflow-hidden">
       {/* Toast notifications */}
       <Toaster 
         position="top-center"
@@ -202,18 +202,74 @@ const LandingPageProfessional = () => {
 
       {/* Hero Section */}
       <section className="relative px-5 py-16 md:px-10 md:py-24">
-        {/* אלמנטים דקורטיביים */}
-        <div ref={decorRef} className="absolute inset-0 overflow-hidden pointer-events-none">
-          {Array.from({ length: 12 }, (_, i) => (
-            <div 
-              key={i}
-              className="decor-dot absolute w-2 h-2 bg-accent rounded-full opacity-0"
-              style={{
-                top: `${10 + (i * 7)}%`,
-                right: `${5 + (i % 3) * 15}%`,
-              }}
-            />
-          ))}
+        {/* אלמנטים דקורטיביים יצירתיים */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Floating geometric shapes */}
+          <motion.div
+            className="absolute top-10 left-10 w-20 h-20"
+            animate={{
+              rotate: [0, 360],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            <div className="w-full h-full bg-gradient-to-r from-luxe-accent/20 to-luxe-soft/30 rounded-lg transform rotate-45" />
+          </motion.div>
+
+          <motion.div
+            className="absolute top-1/4 right-16 w-16 h-16 bg-gradient-to-br from-luxe-primary/10 to-luxe-secondary/20 rounded-full"
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.3, 0.7, 0.3],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+
+          <motion.div
+            className="absolute bottom-1/3 left-1/4 w-12 h-12 bg-luxe-soft/25 rounded-full"
+            animate={{
+              x: [0, 20, 0],
+              y: [0, -15, 0],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
+
+          {/* Dots pattern */}
+          <div ref={decorRef} className="absolute inset-0">
+            {Array.from({ length: 15 }, (_, i) => (
+              <motion.div 
+                key={i}
+                className="absolute w-1 h-1 bg-luxe-accent/40 rounded-full"
+                style={{
+                  top: `${15 + (i * 5)}%`,
+                  right: `${8 + (i % 4) * 12}%`,
+                }}
+                animate={{
+                  opacity: [0, 1, 0],
+                  scale: [0.5, 1, 0.5],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: i * 0.2,
+                  ease: "easeInOut",
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="relative max-w-6xl mx-auto">
@@ -222,10 +278,40 @@ const LandingPageProfessional = () => {
             {/* תוכן טקסטואלי */}
             <div className="text-center lg:text-right">
               <FadeInSection>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-ink-heading leading-tight mb-8">
-                  <HighlightedText>{content.hero.title.replace('🌟', '')}</HighlightedText>
-                  <DynamicIcon emojiOrIcon="🌟" className="inline-block w-10 h-10 md:w-12 md:h-12 mr-3 text-accent" />
-                </h1>
+                <motion.h1 
+                  className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight mb-4 relative"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                  <span className="bg-gradient-to-r from-luxe-primary via-luxe-secondary to-luxe-primary bg-clip-text text-transparent bg-300% animate-gradient">
+                    <HighlightedText>{content.hero.title}</HighlightedText>
+                  </span>
+                </motion.h1>
+                <motion.h2 
+                  className="text-xl md:text-2xl lg:text-3xl font-bold leading-relaxed mb-8 relative"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                >
+                  <span className="bg-gradient-to-r from-luxe-accent to-luxe-soft bg-clip-text text-transparent">
+                    {content.hero.subtitle}
+                  </span>
+                  <motion.div
+                    className="inline-block mr-3"
+                    animate={{
+                      rotate: [0, 15, -15, 0],
+                      scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <DynamicIcon emojiOrIcon="🌟" className="w-8 h-8 md:w-10 md:h-10 text-luxe-accent" />
+                  </motion.div>
+                </motion.h2>
               </FadeInSection>
 
               <FadeInSection delay={0.1}>
@@ -596,19 +682,20 @@ const LandingPageProfessional = () => {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="childAge" className="block text-ink font-semibold mb-2">גיל</label>
+                      <label htmlFor="subjectInterest" className="block text-ink font-semibold mb-2">תחום עניין</label>
                       <select
-                        id="childAge"
-                        name="childAge"
-                        value={formData.childAge}
+                        id="subjectInterest"
+                        name="subjectInterest"
+                        value={formData.subjectInterest}
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 border border-ink-light rounded-card focus:border-accent focus:outline-none transition-colors text-ink"
                       >
-                        <option value="">בחר גיל</option>
-                        {Array.from({ length: 13 }, (_, i) => i + 5).map(age => (
-                          <option key={age} value={age}>{age}</option>
-                        ))}
+                        <option value="">בחר תחום</option>
+                        <option value="מתמטיקה">מתמטיקה</option>
+                        <option value="אנגלית">אנגלית</option>
+                        <option value="הכנה לכיתה א'">הכנה לכיתה א'</option>
+                        <option value="כמה תחומים">כמה תחומים</option>
                       </select>
                     </div>
 

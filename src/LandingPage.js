@@ -168,7 +168,7 @@ const LandingPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-hero font-heebo">
+    <div className="min-h-screen bg-gradient-hero font-playpen">
       {/* Header with Logo */}
       <motion.header 
         className="bg-gradient-clay backdrop-blur-sm shadow-clay py-6 px-8 lg:px-16 sticky top-0 z-50 rounded-b-3xl"
