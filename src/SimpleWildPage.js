@@ -417,11 +417,11 @@ const SimpleWildPage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-luxe-primary leading-tight mb-6">
               למידה אמיתית מתרחשת כשיש{' '}
-              <span className="text-luxe-accent bg-luxe-accent/20 px-2 py-1 rounded-lg">
+              <span className="text-luxe-accent">
                 חופש לגלות
               </span>
               {' '}ותחושת{' '}
-              <span className="text-luxe-secondary bg-luxe-secondary/20 px-2 py-1 rounded-lg">
+              <span className="text-orange-500">
                 ביטחון לנסות
               </span>
             </h1>
@@ -431,7 +431,7 @@ const SimpleWildPage = () => {
         {/* תת-כותרת עם הדגשות */}
         <motion.div
           className="absolute left-0 right-0 px-4"
-          style={{ top: '35%' }}
+          style={{ top: '30%' }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
@@ -439,15 +439,15 @@ const SimpleWildPage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-luxe-primary leading-relaxed">
               קבוצות למידה חווייתיות ב
-              <span className="text-luxe-accent bg-luxe-accent/20 px-3 py-1 mx-2 rounded-lg font-black">
+              <span className="text-luxe-primary bg-yellow-200 px-3 py-1 mx-2 rounded-lg font-black">
                 מתמטיקה
               </span>
               ,{' '}
-              <span className="text-luxe-secondary bg-luxe-secondary/20 px-3 py-1 mx-2 rounded-lg font-black">
+              <span className="text-luxe-primary bg-yellow-200 px-3 py-1 mx-2 rounded-lg font-black">
                 אנגלית
               </span>
               {' '}ו
-              <span className="text-luxe-primary bg-luxe-soft/30 px-3 py-1 mx-2 rounded-lg font-black">
+              <span className="text-luxe-primary bg-yellow-200 px-3 py-1 mx-2 rounded-lg font-black">
                 הכנה לכיתה א'
               </span>
             </h2>
@@ -457,7 +457,7 @@ const SimpleWildPage = () => {
         {/* הפסקה "נתחיל מהסוף" - חלק מההירו */}
         <motion.div
           className="absolute left-0 right-0 px-4"
-          style={{ top: '55%' }}
+          style={{ top: '50%' }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 1, ease: "easeOut" }}
@@ -472,7 +472,7 @@ const SimpleWildPage = () => {
         {/* כפתורי פעולה - עם פדינג מהטקסט */}
         <motion.div
           className="absolute left-0 right-0"
-          style={{ top: '80%' }}
+          style={{ top: '75%' }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
