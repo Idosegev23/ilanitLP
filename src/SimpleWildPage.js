@@ -423,11 +423,11 @@ const SimpleWildPage = () => {
       </motion.div>
 
       {/* תוכן ראשי - טקסט מפוזר */}
-      <div className="relative min-h-screen z-20">
+      <div className="relative min-h-screen sm:min-h-[90vh] z-20">
         {/* כותרת ראשית - טקסט רציף וממורכז */}
         <motion.div
           className="absolute left-0 right-0 px-4"
-          style={{ top: '15%' }}
+          style={{ top: '10%' }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -449,7 +449,7 @@ const SimpleWildPage = () => {
         {/* תת-כותרת עם הדגשות */}
         <motion.div
           className="absolute left-0 right-0 px-4"
-          style={{ top: '30%' }}
+          style={{ top: '25%' }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
@@ -475,12 +475,12 @@ const SimpleWildPage = () => {
         {/* הפסקה "נתחיל מהסוף" - חלק מההירו */}
         <motion.div
           className="absolute left-0 right-0 px-4"
-          style={{ top: '50%' }}
+          style={{ top: '35%' }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 1, ease: "easeOut" }}
         >
-          <div className="max-w-4xl mx-auto text-right space-y-3 text-luxe-secondary text-base md:text-lg leading-relaxed">
+          <div className="max-w-4xl mx-auto text-right space-y-2 text-luxe-secondary text-sm sm:text-base md:text-lg leading-relaxed">
             <div className="whitespace-pre-line">
               {content.hero.intro}
             </div>
@@ -490,7 +490,7 @@ const SimpleWildPage = () => {
         {/* כפתורי פעולה - עם פדינג מהטקסט */}
         <motion.div
           className="absolute left-0 right-0"
-          style={{ top: '75%' }}
+          style={{ top: '50%' }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
