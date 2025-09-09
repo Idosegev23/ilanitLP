@@ -1,10 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, ChevronDown, X } from 'lucide-react';
+import { MessageCircle, ChevronDown, X, BookOpen, Calculator, Pencil, GraduationCap, Dice6, Puzzle, Lightbulb, Heart, Smile } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
-import { content } from './content';
+import { content, emojiToIcon } from './content';
 
 // SimpleWildPage - עמוד נחיתה יצירתי עם טקסט מפוזר
+
+// פונקציה להמרת אימוג'י לאייקון Lucide
+const getIcon = (emoji) => {
+  const iconMap = {
+    "📘": BookOpen,
+    "🧮": Calculator, 
+    "✏️": Pencil,
+    "👩‍🏫": GraduationCap,
+    "🎲": Dice6,
+    "🧩": Puzzle,
+    "💡": Lightbulb,
+    "❤️": Heart,
+    "😊": Smile
+  };
+  
+  const IconComponent = iconMap[emoji];
+  return IconComponent ? <IconComponent size={32} className="text-luxe-accent" /> : emoji;
+};
 
 // קומפוננט דודלים מצוירים בלייב
 const LiveDoodle = ({ path, x, y, size = 100, delay = 0, color = "#D67D65" }) => {
@@ -421,7 +439,7 @@ const SimpleWildPage = () => {
                 חופש לגלות
               </span>
               {' '}ותחושת{' '}
-              <span className="text-orange-500">
+              <span className="text-luxe-accent">
                 ביטחון לנסות
               </span>
             </h1>
@@ -439,15 +457,15 @@ const SimpleWildPage = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-luxe-primary leading-relaxed">
               קבוצות למידה חווייתיות ב
-              <span className="text-luxe-primary bg-yellow-200 px-3 py-1 mx-2 rounded-lg font-black">
+              <span className="text-luxe-primary marker-highlight mx-2 font-black">
                 מתמטיקה
               </span>
               ,{' '}
-              <span className="text-luxe-primary bg-yellow-200 px-3 py-1 mx-2 rounded-lg font-black">
+              <span className="text-luxe-primary marker-highlight mx-2 font-black">
                 אנגלית
               </span>
               {' '}ו
-              <span className="text-luxe-primary bg-yellow-200 px-3 py-1 mx-2 rounded-lg font-black">
+              <span className="text-luxe-primary marker-highlight mx-2 font-black">
                 הכנה לכיתה א'
               </span>
             </h2>
@@ -510,7 +528,7 @@ const SimpleWildPage = () => {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="text-6xl mb-6">{service.icon}</div>
+                <div className="mb-6 flex justify-center">{getIcon(service.icon)}</div>
                 <h3 className="text-xl md:text-2xl font-bold text-luxe-primary mb-4">
                   {service.title}
                 </h3>
@@ -638,7 +656,7 @@ const SimpleWildPage = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-4xl mb-4">{step.icon}</div>
+                <div className="mb-4 flex justify-center">{getIcon(step.icon)}</div>
                 <h3 className="text-lg md:text-xl font-bold text-luxe-primary mb-3">
                   {step.title}
                 </h3>
