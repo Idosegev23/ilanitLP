@@ -485,7 +485,7 @@ const SimpleWildPage = () => {
               היי,<br/>
               שמי אילנית.<br/>
               לפני שאספר על עצמי, אתחיל מהסוף:<br/>
-              אני <span className="marker-highlight">מקדישה את כל כולי</span> ללמד ילדים ולא רק מתמטיקה, חשבון ואנגלית אלא גם ובעיקר <span className="marker-highlight">להאמין בעצמם</span>, לגלות את <span className="marker-highlight">החוזקות שלהם</span>, <span className="marker-highlight">לקבל בטחון</span>, לרכוש הרגלי למידה ולמצוא את הדרך הייחודית שלהם ללמוד, <span className="marker-highlight">בקצב שלהם</span>.
+              אני מקדישה את כל כולי ללמד ילדים ולא רק מתמטיקה, חשבון ואנגלית אלא גם ובעיקר להאמין בעצמם, לגלות את החוזקות שלהם, לקבל בטחון, לרכוש הרגלי למידה ולמצוא את הדרך הייחודית שלהם ללמוד, בקצב שלהם.
             </div>
           </div>
         </motion.div>
