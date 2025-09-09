@@ -1,9 +1,9 @@
-import CreativeLandingPage from './CreativeLandingPage';
+import WildLandingPage from './WildLandingPage';
 
 function App() {
   return (
     <div className="App">
-      <CreativeLandingPage />
+      <WildLandingPage />
     </div>
   );
 }
