@@ -480,9 +480,12 @@ const SimpleWildPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 1, ease: "easeOut" }}
         >
-          <div className="max-w-4xl mx-auto text-right space-y-2 text-luxe-secondary text-sm sm:text-base md:text-lg leading-relaxed">
+          <div className="max-w-4xl mx-auto text-right space-y-2 text-luxe-secondary text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold leading-relaxed">
             <div className="whitespace-pre-line">
-              {content.hero.intro}
+              היי,<br/>
+              שמי אילנית.<br/>
+              לפני שאספר על עצמי, אתחיל מהסוף:<br/>
+              אני <span className="marker-highlight">מקדישה את כל כולי</span> ללמד ילדים ולא רק מתמטיקה, חשבון ואנגלית אלא גם ובעיקר <span className="marker-highlight">להאמין בעצמם</span>, לגלות את <span className="marker-highlight">החוזקות שלהם</span>, <span className="marker-highlight">לקבל בטחון</span>, לרכוש הרגלי למידה ולמצוא את הדרך הייחודית שלהם ללמוד, <span className="marker-highlight">בקצב שלהם</span>.
             </div>
           </div>
         </motion.div>
@@ -490,7 +493,7 @@ const SimpleWildPage = () => {
         {/* כפתורי פעולה - עם פדינג מהטקסט */}
         <motion.div
           className="absolute left-0 right-0"
-          style={{ top: '50%' }}
+          style={{ top: '70%' }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
