@@ -406,96 +406,61 @@ const SimpleWildPage = () => {
 
       {/* תוכן ראשי - טקסט מפוזר */}
       <div className="relative min-h-screen z-20">
-        {/* כותרת ראשית - בשורות מסודרות RTL */}
-        
-        {/* שורה 1: למידה אמיתית מתרחשת */}
-        <ScatteredText 
-          text="למידה אמיתית" 
-          x={65} 
-          y={12} 
-          size="text-lg sm:text-2xl md:text-5xl" 
-          weight="font-black"
-          color="text-luxe-primary"
-          rotation={-1}
-          delay={0}
-        />
-        
-        <ScatteredText 
-          text="מתרחשת" 
-          x={25} 
-          y={12} 
-          size="text-lg sm:text-2xl md:text-5xl" 
-          weight="font-black"
-          color="text-luxe-accent"
-          rotation={1}
-          delay={0.3}
-        />
-        
-        {/* שורה 2: כשיש חופש לגלות */}
-        <ScatteredText 
-          text="כשיש חופש" 
-          x={60} 
-          y={20} 
-          size="text-base sm:text-xl md:text-4xl" 
-          weight="font-bold"
-          color="text-luxe-secondary"
-          rotation={2}
-          delay={0.6}
-        />
-        
-        <ScatteredText 
-          text="לגלות" 
-          x={20} 
-          y={20} 
-          size="text-base sm:text-xl md:text-4xl" 
-          weight="font-bold"
-          color="text-luxe-primary"
-          rotation={-2}
-          delay={0.9}
-        />
-        
-        {/* שורה 3: ותחושת ביטחון לנסות */}
-        <ScatteredText 
-          text="ותחושת ביטחון" 
-          x={55} 
-          y={28} 
-          size="text-sm sm:text-lg md:text-3xl" 
-          weight="font-semibold"
-          color="text-luxe-secondary"
-          rotation={1}
-          delay={1.2}
-        />
-        
-        <ScatteredText 
-          text="לנסות" 
-          x={15} 
-          y={28} 
-          size="text-xl sm:text-3xl md:text-6xl" 
-          weight="font-black"
-          color="text-luxe-accent"
-          rotation={-1}
-          delay={1.5}
-        />
+        {/* כותרת ראשית - טקסט רציף וממורכז */}
+        <motion.div
+          className="absolute left-0 right-0 px-4"
+          style={{ top: '15%' }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-luxe-primary leading-tight mb-6">
+              למידה אמיתית מתרחשת כשיש{' '}
+              <span className="text-luxe-accent bg-luxe-accent/20 px-2 py-1 rounded-lg">
+                חופש לגלות
+              </span>
+              {' '}ותחושת{' '}
+              <span className="text-luxe-secondary bg-luxe-secondary/20 px-2 py-1 rounded-lg">
+                ביטחון לנסות
+              </span>
+            </h1>
+          </div>
+        </motion.div>
 
-        {/* כותרת משנה - ממורכזת */}
-        <ScatteredText 
-          text={content.hero.subtitle} 
-          x={10} 
-          y={38} 
-          size="text-sm sm:text-base md:text-2xl" 
-          weight="font-bold"
-          color="text-luxe-primary"
-          rotation={0}
-          delay={1.8}
-        />
+        {/* תת-כותרת עם הדגשות */}
+        <motion.div
+          className="absolute left-0 right-0 px-4"
+          style={{ top: '35%' }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+        >
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-luxe-primary leading-relaxed">
+              קבוצות למידה חווייתיות ב
+              <span className="text-luxe-accent bg-luxe-accent/20 px-3 py-1 mx-2 rounded-lg font-black">
+                מתמטיקה
+              </span>
+              ,{' '}
+              <span className="text-luxe-secondary bg-luxe-secondary/20 px-3 py-1 mx-2 rounded-lg font-black">
+                אנגלית
+              </span>
+              {' '}ו
+              <span className="text-luxe-primary bg-luxe-soft/30 px-3 py-1 mx-2 rounded-lg font-black">
+                הכנה לכיתה א'
+              </span>
+            </h2>
+          </div>
+        </motion.div>
 
         {/* הפסקה "נתחיל מהסוף" - חלק מההירו */}
         <motion.div
           className="absolute left-0 right-0 px-4"
-          style={{ top: '48%' }}
+          style={{ top: '55%' }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.2, duration: 1, ease: "easeOut" }}
+          transition={{ delay: 1, duration: 1, ease: "easeOut" }}
         >
           <div className="max-w-4xl mx-auto text-right space-y-3 text-luxe-secondary text-base md:text-lg leading-relaxed">
             <div className="whitespace-pre-line">
@@ -506,16 +471,57 @@ const SimpleWildPage = () => {
 
         {/* כפתורי פעולה - עם פדינג מהטקסט */}
         <motion.div
-          className="absolute left-0 right-0 mt-8"
-          style={{ top: '75%' }}
+          className="absolute left-0 right-0"
+          style={{ top: '80%' }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 3, duration: 1, ease: "easeOut" }}
+          transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
         >
           <CTAButtons onFormOpen={() => setShowForm(true)} />
         </motion.div>
       </div>
 
+      {/* סקשן השירותים */}
+      <motion.section 
+        className="relative py-16 px-0 sm:px-5 z-10 bg-white/50"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="text-3xl md:text-5xl font-black text-luxe-primary text-center mb-12"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            מה תמצאו אצלי?
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {content.services.map((service, index) => (
+              <motion.div
+                key={index}
+                className="bg-white/80 backdrop-blur-sm rounded-[3rem] p-8 shadow-xl border-2 border-luxe-soft/30 hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center"
+                initial={{ y: 50, opacity: 0, scale: 0.8 }}
+                whileInView={{ y: 0, opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-6xl mb-6">{service.icon}</div>
+                <h3 className="text-xl md:text-2xl font-bold text-luxe-primary mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-luxe-secondary leading-relaxed">
+                  {service.content}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
 
       {/* סקשן אודות איילנית */}
       <motion.section 
@@ -599,6 +605,48 @@ const SimpleWildPage = () => {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* סקשן התהליך */}
+      <motion.section 
+        className="relative py-16 px-0 sm:px-5 z-10 bg-gradient-to-br from-luxe-soft/10 to-white/50"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="text-3xl md:text-5xl font-black text-luxe-primary text-center mb-12"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            איך זה עובד?
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {content.process.map((step, index) => (
+              <motion.div
+                key={index}
+                className="bg-white/80 backdrop-blur-sm rounded-[2rem] p-6 shadow-xl border-2 border-luxe-soft/30 hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center"
+                initial={{ y: 50, opacity: 0, scale: 0.8 }}
+                whileInView={{ y: 0, opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="text-4xl mb-4">{step.icon}</div>
+                <h3 className="text-lg md:text-xl font-bold text-luxe-primary mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-luxe-secondary leading-relaxed text-sm md:text-base">
+                  {step.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.section>
