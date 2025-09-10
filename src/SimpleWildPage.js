@@ -302,7 +302,7 @@ const SimpleWildPage = () => {
     e.preventDefault();
     
     // ולידציה - בדיקה שכל השדות מלאים
-    if (!formData.parentName.trim() || !formData.parentPhone.trim() || !formData.childName.trim() || !formData.subjectInterest.trim()) {
+    if (!formData.parentName.trim() || !formData.parentPhone.trim() || !formData.childName.trim() || !formData.subjectInterest.trim() || !formData.childGrade.trim()) {
       toast.error('אנא מלאו את כל השדות');
       return;
     }
@@ -316,25 +316,46 @@ const SimpleWildPage = () => {
 
     setIsSubmitting(true);
 
+    // הכנת המידע שישלח לוובהוק
+    const submissionData = {
+      timestamp: new Date().toISOString(),
+      parentName: formData.parentName.trim(),
+      parentPhone: formData.parentPhone.trim(),
+      childName: formData.childName.trim(),
+      subjectInterest: formData.subjectInterest,
+      childGrade: formData.childGrade,
+      source: 'לב ללמידה - אתר אילנית',
+      formType: 'הרשמה לקבוצות למידה'
+    };
+
+    console.log('🚀 שולח נתונים לוובהוק:', submissionData);
+
     try {
       const response = await fetch('https://hook.eu2.make.com/fyjhdrxdlc60se4nry8ux0i3xy6qb84b', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(submissionData),
       });
 
+      console.log('📡 תגובת הוובהוק:', response.status, response.statusText);
+
       if (response.ok) {
+        const responseData = await response.text();
+        console.log('✅ הוובהוק הצליח:', responseData);
         toast.success('הפרטים נשלחו בהצלחה! אילנית תיצור איתכם קשר בקרוב.');
         setFormData({
           parentName: '', parentPhone: '', childName: '', subjectInterest: '', childGrade: ''
         });
         setShowForm(false);
       } else {
+        const errorText = await response.text();
+        console.error('❌ שגיאה בוובהוק:', response.status, errorText);
         toast.error('אירעה שגיאה בשליחת הפרטים. אנא נסו שוב.');
       }
     } catch (error) {
+      console.error('❌ שגיאת רשת:', error);
       toast.error('אירעה שגיאה בשליחת הפרטים. אנא נסו שוב.');
     } finally {
       setIsSubmitting(false);
