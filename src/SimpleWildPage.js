@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, ChevronDown, X, BookOpen, Calculator, Pencil, GraduationCap, Dice6, Puzzle, Lightbulb, Heart, Smile } from 'lucide-react';
+import { MessageCircle, ChevronDown, X, BookOpen, Calculator, Pencil, Search, GraduationCap, Dice6, Puzzle, Lightbulb, Heart, Smile } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 import { content, emojiToIcon } from './content';
 
@@ -12,6 +12,7 @@ const getIcon = (emoji) => {
     "📘": BookOpen,
     "🧮": Calculator, 
     "✏️": Pencil,
+    "🔍": Search,
     "👩‍🏫": GraduationCap,
     "🎲": Dice6,
     "🧩": Puzzle,
@@ -546,12 +547,21 @@ const SimpleWildPage = () => {
             {content.services.map((service, index) => (
               <motion.div
                 key={index}
-                className="bg-white/80 backdrop-blur-sm rounded-[3rem] p-8 shadow-xl border-2 border-luxe-soft/30 hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center"
+                className={`backdrop-blur-sm rounded-[3rem] p-8 shadow-xl border-2 hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center relative ${
+                  service.comingSoon 
+                    ? 'bg-gradient-to-br from-luxe-soft/20 to-luxe-accent/20 border-luxe-accent/40' 
+                    : 'bg-white/80 border-luxe-soft/30'
+                }`}
                 initial={{ y: 50, opacity: 0, scale: 0.8 }}
                 whileInView={{ y: 0, opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
+                {service.comingSoon && (
+                  <div className="absolute -top-3 -right-3 bg-luxe-accent text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg">
+                    בקרוב
+                  </div>
+                )}
                 <div className="mb-6 flex justify-center">{getIcon(service.icon)}</div>
                 <h3 className="text-xl md:text-2xl font-bold text-luxe-primary mb-4">
                   {service.title}
