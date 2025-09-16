@@ -165,28 +165,30 @@ const ScatteredFAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
   
   return (
-    <div className="relative py-12 px-0 sm:px-5 z-10">
+    <div className="relative py-16 px-0 sm:px-5 z-10">
       {/* כותרת ראשית */}
-      <ScatteredText 
-        text="שאלות שאתם שואלים" 
-        x={15} 
-        y={5} 
-        size="text-3xl md:text-5xl" 
-        weight="font-black"
-        color="text-luxe-primary"
-        rotation={-2}
-      />
-      
-      <ScatteredText 
-        text="התשובות שאתם מחפשים" 
-        x={55} 
-        y={8} 
-        size="text-xl md:text-3xl" 
-        weight="font-bold"
-        color="text-luxe-accent"
-        rotation={2}
-        delay={0.5}
-      />
+      <div className="mb-12 sm:mb-16">
+        <ScatteredText 
+          text="שאלות שאתם שואלים" 
+          x={15} 
+          y={5} 
+          size="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" 
+          weight="font-black"
+          color="text-luxe-primary"
+          rotation={-2}
+        />
+        
+        <ScatteredText 
+          text="התשובות שאתם מחפשים" 
+          x={55} 
+          y={12} 
+          size="text-lg sm:text-xl md:text-2xl lg:text-3xl" 
+          weight="font-bold"
+          color="text-luxe-accent"
+          rotation={2}
+          delay={0.5}
+        />
+      </div>
 
       {/* איורים נוספים לאזור FAQ */}
       <FloatingIllustration 
@@ -217,8 +219,8 @@ const ScatteredFAQ = () => {
       />
 
       {/* שאלות מאורגנות בצורה יפה */}
-      <div className="mt-32 max-w-4xl mx-auto relative">
-        <div className="grid gap-6 md:gap-8">
+      <div className="mt-16 sm:mt-24 max-w-4xl mx-auto relative px-4 sm:px-0">
+        <div className="grid gap-4 sm:gap-6 md:gap-8">
           {content.faq.map((item, index) => {
             // סידור אנכי רגיל במקום זיג-זג
             const rotation = 0;
@@ -236,18 +238,18 @@ const ScatteredFAQ = () => {
                   ease: "easeOut" 
                 }}
               >
-                <div className="bg-white/95 backdrop-blur-sm rounded-[2rem] p-4 shadow-xl border-2 border-luxe-soft/30 hover:shadow-2xl hover:scale-105 transition-all duration-300 relative z-20">
+                <div className="bg-white/95 backdrop-blur-sm rounded-[1.5rem] sm:rounded-[2rem] p-4 sm:p-6 shadow-xl border-2 border-luxe-soft/30 hover:shadow-2xl hover:scale-105 transition-all duration-300 relative z-20">
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="w-full text-right flex items-start justify-between gap-4"
+                    className="w-full text-right flex items-start justify-between gap-3 sm:gap-4"
                   >
                     <motion.div
                       animate={{ rotate: openIndex === index ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <ChevronDown className="w-5 h-5 text-luxe-accent flex-shrink-0 mt-1" />
+                      <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-luxe-accent flex-shrink-0 mt-1" />
                     </motion.div>
-                    <h3 className="text-lg font-bold text-luxe-primary leading-tight">
+                    <h3 className="text-base sm:text-lg font-bold text-luxe-primary leading-tight">
                       {item.question}
                     </h3>
                   </button>
@@ -259,10 +261,10 @@ const ScatteredFAQ = () => {
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="overflow-hidden mt-4"
+                        className="overflow-hidden mt-3 sm:mt-4"
                       >
-                        <div className="w-full h-px bg-gradient-to-r from-luxe-accent/30 to-luxe-soft/30 mb-4" />
-                        <p className="text-luxe-secondary leading-relaxed">
+                        <div className="w-full h-px bg-gradient-to-r from-luxe-accent/30 to-luxe-soft/30 mb-3 sm:mb-4" />
+                        <p className="text-luxe-secondary leading-relaxed text-sm sm:text-base">
                           {item.answer}
                         </p>
                       </motion.div>
@@ -449,13 +451,13 @@ const SimpleWildPage = () => {
         {/* כותרת ראשית - טקסט רציף וממורכז */}
         <motion.div
           className="absolute left-0 right-0 px-4"
-          style={{ top: '10%' }}
+          style={{ top: '8%' }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-luxe-primary leading-tight mb-6">
+            <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-luxe-primary leading-snug sm:leading-tight mb-4 sm:mb-6">
               למידה אמיתית מתרחשת כשיש{' '}
               <span className="text-luxe-accent">
                 חופש לגלות
@@ -471,23 +473,23 @@ const SimpleWildPage = () => {
         {/* תת-כותרת עם הדגשות */}
         <motion.div
           className="absolute left-0 right-0 px-4"
-          style={{ top: '25%' }}
+          style={{ top: '28%' }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
         >
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-luxe-primary leading-relaxed">
+            <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-luxe-primary leading-normal sm:leading-relaxed">
               קבוצות למידה חווייתיות ב
-              <span className="text-luxe-primary marker-highlight mx-2 font-black">
+              <span className="text-luxe-primary marker-highlight mx-1 sm:mx-2 font-black">
                 מתמטיקה
               </span>
               ,{' '}
-              <span className="text-luxe-primary marker-highlight mx-2 font-black">
+              <span className="text-luxe-primary marker-highlight mx-1 sm:mx-2 font-black">
                 אנגלית
               </span>
               {' '}ו
-              <span className="text-luxe-primary marker-highlight mx-2 font-black">
+              <span className="text-luxe-primary marker-highlight mx-1 sm:mx-2 font-black">
                 הכנה לכיתה א'
               </span>
             </h2>
@@ -497,12 +499,12 @@ const SimpleWildPage = () => {
         {/* הפסקה "נתחיל מהסוף" - חלק מההירו */}
         <motion.div
           className="absolute left-0 right-0 px-4"
-          style={{ top: '35%' }}
+          style={{ top: '42%' }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 1, ease: "easeOut" }}
         >
-          <div className="max-w-4xl mx-auto text-right space-y-2 text-luxe-secondary text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold leading-relaxed">
+          <div className="max-w-4xl mx-auto text-right space-y-1 sm:space-y-2 text-luxe-secondary text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold leading-normal sm:leading-relaxed">
             <div className="whitespace-pre-line">
               היי,<br/>
               שמי אילנית.<br/>
@@ -515,7 +517,7 @@ const SimpleWildPage = () => {
         {/* כפתורי פעולה - עם פדינג מהטקסט */}
         <motion.div
           className="absolute left-0 right-0"
-          style={{ top: '70%' }}
+          style={{ top: '75%' }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
@@ -543,7 +545,7 @@ const SimpleWildPage = () => {
             מה תמצאו אצלי?
           </motion.h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {content.services.map((service, index) => (
               <motion.div
                 key={index}
@@ -591,13 +593,13 @@ const SimpleWildPage = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="text-right mb-6">
-                <h2 className="text-3xl md:text-5xl font-black text-luxe-primary">
+              <div className="text-right mb-4 sm:mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-luxe-primary">
                   איך הגעתי לשם?
                 </h2>
               </div>
               
-              <div className="mt-6 space-y-4 text-luxe-secondary text-lg leading-relaxed relative">
+              <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4 text-luxe-secondary text-base sm:text-lg leading-relaxed relative">
                 <FloatingIllustration 
                   src="/illustrations/undraw_selfie-fun_0qzh.svg" 
                   x={-10} 
@@ -611,15 +613,15 @@ const SimpleWildPage = () => {
                   {content.about.content}
                 </div>
                 
-                <div className="flex flex-nowrap gap-2 mt-6 justify-start">
-                  <div className="bg-luxe-soft/20 px-3 py-1 rounded-full">
-                    <span className="text-luxe-primary font-semibold text-sm">מאמנת לימודית</span>
+                <div className="flex flex-wrap gap-2 mt-4 sm:mt-6 justify-start">
+                  <div className="bg-luxe-soft/20 px-2 sm:px-3 py-1 rounded-full">
+                    <span className="text-luxe-primary font-semibold text-xs sm:text-sm">מאמנת לימודית</span>
                   </div>
-                  <div className="bg-luxe-accent/20 px-3 py-1 rounded-full">
-                    <span className="text-luxe-primary font-semibold text-sm">הוראה מתקנת</span>
+                  <div className="bg-luxe-accent/20 px-2 sm:px-3 py-1 rounded-full">
+                    <span className="text-luxe-primary font-semibold text-xs sm:text-sm">הוראה מתקנת</span>
                   </div>
-                  <div className="bg-luxe-primary/20 px-3 py-1 rounded-full">
-                    <span className="text-luxe-primary font-semibold text-sm">למידה חווייתית</span>
+                  <div className="bg-luxe-primary/20 px-2 sm:px-3 py-1 rounded-full">
+                    <span className="text-luxe-primary font-semibold text-xs sm:text-sm">למידה חווייתית</span>
                   </div>
                 </div>
               </div>
